@@ -11,7 +11,7 @@ exports.parse = parse;
   *
   */
 
-var connected = 0;
+// var connected = 0;
 function parse (req, res) {
   var user = req.body.user;
   var beaconData = req.body.beaconData;
@@ -19,11 +19,11 @@ function parse (req, res) {
   console.log("REQUEST", req.body);
 
 
-  if (connected > 0) {
-    connected++;
+  // if (connected === 0) {
+    // connected++;
     // Add the user to the customers table in the database
     db.child('customers').push({
       user: user
     });
-  }
+  // }
 }
